@@ -1,8 +1,8 @@
-var anotherObject = {
-    a:2
+let anotherObject = {
+    a: 2
 }
 
-var myObject = Object.create(anotherObject)
+let myObject = Object.create(anotherObject)
 
 anotherObject.a
 myObject.a
@@ -10,13 +10,48 @@ myObject.a
 anotherObject.hasOwnProperty('a')
 myObject.hasOwnProperty('a')
 
-myObject.a++  //隐式屏蔽
+myObject.a++ //隐式屏蔽
 
-anotherObject.a
+    anotherObject.a
 
 myObject.a
 
 myObject.hasOwnProperty('a')
 
-var aaa = Object.create(null)
+let aaa = Object.create(null)
+
+
+
+const Task = {
+    setId(ID) {
+        this.id = ID
+    },
+    outputID() {
+        console.log(this.id);
+    }
+}
+
+const XYZ = Object.create(Task)
+
+XYZ.prepareTask = function (ID, Label) {
+    console.log(this);
+    this.setId(ID)
+    this.Label = Label
+}
+
+XYZ.outputTaskDetails = function () {
+    this.outputID() 
+    console.log(this.Label);
+}
+
+XYZ.prepareTask()
+
+const bb = {
+    a: 1,
+    b() {
+        return this.a + 1
+    }
+}
+
+
 
