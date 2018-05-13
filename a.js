@@ -31,8 +31,8 @@ function foo() {
 }
 
 var obj = {
-    a:2,
-    foo:foo
+    a: 2,
+    foo: foo
 }
 
 var a = 'hello world'
@@ -41,6 +41,22 @@ var a = function () {
     return foo.apply(obj)
 }
 
-setTimeout(()=>{
+setTimeout(() => {
     a()
 }, 100);
+
+var myObject = {
+    a: 2
+}
+
+var aa = Object.getOwnPropertyDescriptor(myObject, "a")
+
+// console.log(aa);
+
+var myarray = [1, 2, 3]
+var it = myarray[Symbol.iterator]()
+
+it.next()
+it.next()
+it.next()
+var a = it.next()
