@@ -1,8 +1,10 @@
 //809074303b1a05d1c398b5f4d51c18dc
 
+
 let anotherObject = {
     a: 2
 }
+
 
 let myObject = Object.create(anotherObject)
 
@@ -42,7 +44,7 @@ XYZ.prepareTask = function (ID, Label) {
 }
 
 XYZ.outputTaskDetails = function () {
-    this.outputID() 
+    this.outputID()
     console.log(this.Label);
 }
 
@@ -54,6 +56,3 @@ const bb = {
         return this.a + 1
     }
 }
-
-
-
